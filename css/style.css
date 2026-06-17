@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(221, 188, 193);
+    /* height: 100vh;
+    width: 100%; */
+    color:white;
+}
+section{
+    background-color: rgb(59, 12, 12);
+    padding: 20px 40px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+.navLogo img{
+    border-radius: 50%;
+}
+.navLogo{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.navLists .navList:hover{
+    color:red;
+}
