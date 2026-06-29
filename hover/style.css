@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.card{
+    position: relative;
+    overflow: hidden;
+}
+.card img{
+    display: block;
+}
+.overlay{
+    position: absolute;
+    inset: 0;
+    background-color: rgb(37, 36, 36);
+    opacity: 0;
+    transition: .5s;
+}
+.card:hover .overlay{
+    opacity: 1;
+}
