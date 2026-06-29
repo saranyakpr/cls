@@ -4,14 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css"/>
+    <style>
+        .main{
+            display: flex;
+            justify-content: space-between;
+        }
+        .sub{
+            display: flex;
+        }
+        .extraSub{
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+        @media (max-width: 768px){
+            .main{
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 320px){
+            .extraSub{
+                flex-direction: column;
+            }
+            .sub{
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="card">
-        <img src="../img/coffee.jpg" alt="coffee"/>
-        <div class="overlay">
-            <h1>hi</h1>
+    <div class="main">
+        <div class="extraSub">
+            <div>ninestar</div>
+            <div class="sub">
+                <div>useful links</div>
+                <div>our services</div>
+            </div>
         </div>
+        <div>follow us</div>
     </div>
 </body>
 </html>
