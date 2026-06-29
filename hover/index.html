@@ -5,43 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .main{
-            display: flex;
-            justify-content: space-between;
+        *{
+            padding: 0;
+            margin: 0;
         }
-        .sub{
-            display: flex;
+        .card{
+            width: 30%;
+            position: relative;
         }
-        .extraSub{
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
+        .overlay{
+            position: absolute;
+            inset: 0;
+            background-color: rgb(43, 41, 41);
+            opacity: 0;
+            transition: .5s;
         }
-        @media (max-width: 768px){
-            .main{
-                flex-direction: column;
-            }
-        }
-        @media (max-width: 320px){
-            .extraSub{
-                flex-direction: column;
-            }
-            .sub{
-                flex-direction: column;
-            }
+        .card:hover .overlay{
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div class="main">
-        <div class="extraSub">
-            <div>ninestar</div>
-            <div class="sub">
-                <div>useful links</div>
-                <div>our services</div>
-            </div>
+    <div class="card">
+        <img src="../img/coffee.jpg" alt="coffee"/>
+        <div class="overlay">
+            <h1>hi</h1>
         </div>
-        <div>follow us</div>
     </div>
 </body>
 </html>
