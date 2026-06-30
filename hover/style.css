@@ -9,12 +9,12 @@
 nav{
     display: flex;
     justify-content: space-between;
-    background-color: rgb(209, 170, 176);
+    background-color: orange;
     padding: 2rem;
     position: fixed;
     top: 0;
-    right: 0;
     left: 0;
+    right: 0;
 }
 nav ul{
     display: flex;
@@ -22,7 +22,6 @@ nav ul{
 }
 nav ul li{
     list-style: none;
-    cursor: pointer;
 }
 nav ul li a{
     text-decoration: none;
@@ -33,7 +32,7 @@ nav ul li a.active{
 }
 .main{
     height: 100vh;
-    background-color: red;
+    background-color: green;
     margin-top: .5rem;
     display: flex;
     justify-content: center;

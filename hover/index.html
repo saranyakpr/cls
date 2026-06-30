@@ -13,7 +13,7 @@
         <nav>
             <div>logo</div>
             <ul>
-                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#service">Service</a></li>
                 <li><a href="#team">Team</a></li>
@@ -27,35 +27,33 @@
         <div class="main" id="team">Team</div>
         <div class="main" id="contact">Contact</div>
 
-
     </section>
 
     <script>
-        const sections = document.querySelectorAll(".main");
-        const navLinks = document.querySelectorAll("nav ul li a");
+        
+        const navLinks = document.querySelectorAll('nav ul li a');
+        const sections = document.querySelectorAll('.main');
 
-        window.addEventListener("scroll", () => {
-            let current = "home";
-            sections.forEach((section) => {
+        window.addEventListener('scroll', ()=>{
+            let current = 'home';
+            sections.forEach((section)=>{
                 const sectionTop = section.offsetTop - 100;
                 const sectionHeight = section.clientHeight;
-                if (
-                    window.scrollY >= sectionTop &&
-                    window.scrollY < sectionTop + sectionHeight
-                ) {
+                if(window.scrollY >= sectionTop && window.scrollY < sectionTop+sectionHeight){
                     current = section.id;
                 }
-
             });
 
-            navLinks.forEach((link) => {
-                link.classList.remove("active");
-                if (link.getAttribute("href") === "#" + current) {
-                    link.classList.add("active");
+            navLinks.forEach((link)=>{
+                link.classList.remove('active');
+                if(link.getAttribute('href') === '#'+current){
+                    link.classList.add('active');
                 }
             });
-        });
+        })
+
     </script>
+
 
 </body>
 </html>
