@@ -4,33 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-        }
-        .card{
-            width: 30%;
-            position: relative;
-        }
-        .overlay{
-            position: absolute;
-            inset: 0;
-            background-color: rgb(43, 41, 41);
-            opacity: 0;
-            transition: .5s;
-        }
-        .card:hover .overlay{
-            opacity: 1;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="card">
-        <img src="../img/coffee.jpg" alt="coffee"/>
-        <div class="overlay">
-            <h1>hi</h1>
-        </div>
-    </div>
+    <section class="container">
+
+        <!-- nav -->
+        <nav>
+            <div>logo</div>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="main" id="home">Home</div>
+        <div class="main" id="about">About</div>
+        <div class="main" id="service">Service</div>
+        <div class="main" id="team">Team</div>
+        <div class="main" id="contact">Contact</div>
+
+
+    </section>
+
+    <script>
+        const sections = document.querySelectorAll(".main");
+        const navLinks = document.querySelectorAll("nav ul li a");
+
+        window.addEventListener("scroll", () => {
+            let current = "home";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (
+                    window.scrollY >= sectionTop &&
+                    window.scrollY < sectionTop + sectionHeight
+                ) {
+                    current = section.id;
+                }
+
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
