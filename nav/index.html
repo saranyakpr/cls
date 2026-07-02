@@ -4,23 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .boxes{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        ul li{
+            list-style: none;
+            color:blue;
+        }
+        ul{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <section>
-        <div>
-            <h2>Bettter digital experience with Ninestars</h2>
-            <p>We are team of talented designers making websites with Bootstrap</p>
-            <div>
-                <p>Get Started</p>
-                <p> <i class="fa-regular fa-circle-play"></i> Get Started</p>
-            </div>
+        <div class="nav">
+            <ul>
+                <li data-filter="all">All</li>
+                <li data-filter="app">App</li>
+                <li data-filter="web">Web</li>
+            </ul>
         </div>
-        <div style="width: 50%;">
-            <img src="../img/hero-img.svg" alt="hero" width="100%" height="100%" class="image">
+        <div class="boxes">
+            <div class="box" data-category="app">App 1</div>
+            <div class="box" data-category="app">App 2</div>
+            <div class="box" data-category="web">Web 1</div>
+            <div class="box" data-category="web">Web 2</div>
         </div>
     </section>
-
+    
+    
+    <script>
+    	const navs = document.querySelectorAll(".nav ul li");
+        const boxes = document.querySelectorAll(".box");
+        
+        navs.forEach((nav)=>{
+        	nav.addEventListener("click", ()=>{
+            	const navData = nav.getAttribute("data-filter");
+                
+                navs.forEach((item)=>{
+                	item.style.color = "blue";
+                })
+                
+                nav.style.color="red";
+                
+                boxes.forEach((box)=>{
+                	const boxData = box.getAttribute("data-category");
+                    
+                    if(navData == "all" || navData == boxData){
+                    	box.style.display = "flex";
+                    }
+                    else{
+                    	box.style.display = "none";
+                    }
+                })
+                
+            })
+        })
+        
+        
+    </script>
 </body>
 </html>
