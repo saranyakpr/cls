@@ -1,0 +1,13 @@
+body{
+    background:#f7d9df;
+}
+
+.hero{
+    background:#48111c;
+    border-radius:20px;
+    margin-top:30px;
+}
+
+.hero img{
+    max-width:100%;
+}
