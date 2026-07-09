@@ -1,17 +1,66 @@
 <!DOCTYPE html>
-<html>
-<body>
-
-<h2 id="head">hellow</h2>
-<button type="button" onclick="funName()">Click Me</button>
-
-<script>
-	let heading = document.getElementById("head");
-    
-    function funName(){
-    	heading.innerHTML = "bye";
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+</head>
+<style>
+    div i{
+        font-size: 13rem;
     }
-</script>
+    .icon{
+        display: flex;
+        justify-content: center;
+    }
+    .button{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10rem;
+    }
+    .button button{
+        cursor: pointer;
+        padding: 1rem 2rem;
+        color: white;
+        background-color: black;
+        border: none;
+        border-radius: 5px;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+</style>
+<body>
+    <div class="icon">
+        <i id="icon" class="fa-solid fa-lightbulb" style="color:black"></i>
+    </div>
+    <div class="button">
+        <button id="onBtn" onclick="onFun()">ON</button>
+        <button id="offBtn" onclick="offFun()" style="background-color: white;">Off</button>
+    </div>
 
+    <script>
+        let icon = document.getElementById('icon');
+        let onBtn = document.getElementById('onBtn');
+        let offBtn = document.getElementById('offBtn');
+
+        function onFun(){
+            icon.style.color="yellow";
+            onBtn.style.backgroundColor="white";
+            offBtn.style.backgroundColor="black";
+        }
+
+        function offFun(){
+            icon.style.color="black";
+            offBtn.style.backgroundColor="white";
+            onBtn.style.backgroundColor="black";
+        }
+    </script>
 </body>
 </html>
