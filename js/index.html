@@ -66,6 +66,29 @@
 </html>-->
 
 
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para">hi</p>
+    <button onclick="funName()">click me</button>
+
+    <script>
+        let para = document.getElementById('para');
+
+        function funName(){
+            para.innerHTML = 'hello';
+        }
+
+    </script>
+</body>
+</html> -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -75,7 +98,33 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="para" style="display: none;">hi</p>
-    <button onclick="document.getElementById('para').style.display='block'">click me</button>
+    
+
+
+
+    <script>
+        const div = document.createElement('div');
+        document.body.appendChild(div);
+        div.style.display = 'flex';
+
+        const div1 = document.createElement('div');
+        div.appendChild(div1);
+        div1.setAttribute("class", "main");
+        div1.style.backgroundColor = 'red';
+        div1.style.height = '3rem';
+        div1.style.width = '3rem';
+
+        const div2 = document.createElement('div');
+        div.appendChild(div2);
+        div2.setAttribute("class", "main");
+        div2.style.backgroundColor = 'yellow';
+        div2.style.height = '3rem';
+        div2.style.width = '3rem'
+    </script>
+
+
 </body>
 </html>
+
+
+
